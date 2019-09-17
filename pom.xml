@@ -18,14 +18,25 @@
         <slf4jApiVersion>1.7.25</slf4jApiVersion>
         <lombockVersion>1.18.4</lombockVersion>
         <springVersion>5.0.8.RELEASE</springVersion>
-        <jacksonVersion>2.9.9.2</jacksonVersion>
+        <jacksonVersion>2.9.8</jacksonVersion>
         <hikariVersion>2.7.4</hikariVersion>
         <hibernateValidatorVersion>6.0.9.Final</hibernateValidatorVersion>
         <glasshfishELVersion>3.0.0</glasshfishELVersion>
         <servletVersion>4.0.1</servletVersion>
         <h2Version>1.4.194</h2Version>
         <jsonPathVersion>2.4.0</jsonPathVersion>
+        <pmdVersion>3.12.0</pmdVersion>
     </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>${pmdVersion}</version>
+            </plugin>
+        </plugins>
+    </build>
 
     <dependencies>
         <dependency>
