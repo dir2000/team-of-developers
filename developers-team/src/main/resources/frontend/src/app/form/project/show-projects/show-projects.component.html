@@ -1,0 +1,50 @@
+<form>
+  <div class="container-fluid m-2">
+
+    <div class="row">
+      <div class="col-xl-1 border" *ngIf="projects.length != 0">
+        Id:
+      </div>
+      <div class="col-xl-2 border" *ngIf="projects.length != 0">
+        Name:
+      </div>
+      <div class="col-xl-2 border" *ngIf="projects.length != 0">
+        Description:
+      </div>
+      <div class="col-xl-2 border" *ngIf="projects.length != 0">
+        Status:
+      </div>
+      <div class="col-xl-2 border" *ngIf="projects.length != 0">
+        ETA:
+      </div>
+      <div class="btn-group btn-group-sm col-xl-3">
+        <button type="button" class="btn btn-outline-success" (click)="createProject()" routerLink="/projects/create">Create</button>
+        <button *ngIf="projects.length != 0" type="button" class="btn btn-outline-info" routerLink="/projects/query">Query</button>
+      </div>
+    </div>
+    <br/>
+    <div class="row" *ngFor="let project of projects">
+      <div class="col-xl-1 border">
+        {{project.id}}
+      </div>
+      <div class="col-xl-2 border">
+        {{project.name}}
+      </div>
+      <div class="col-xl-2 border">
+        {{project.description}}
+      </div>
+      <div class="col-xl-2 border">
+        {{project.status}}
+      </div>
+      <div class="col-xl-2 border">
+        {{project.eta | date}}
+      </div>
+
+      <div class="btn-group btn-group-sm col-xl-3">
+        <button type="button" class="btn btn-outline-warning" (click)="updateProject(project.id)" routerLink="/projects/update">Update</button>
+        <button type="button" class="btn btn-outline-warning" (click)="patchAddress(project.id)" routerLink="/projects/update">Patch Description</button>
+        <button type="button" class="btn btn-outline-danger" (click)="deleteProject(project.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</form>

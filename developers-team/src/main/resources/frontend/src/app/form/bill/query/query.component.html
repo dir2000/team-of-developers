@@ -1,0 +1,29 @@
+<form #BillForm="ngForm">
+  <div class="form-group m-2">
+    <div *ngIf="!formSubmitted">
+      <label for="id">Id:</label>
+      <input #billId
+        type="text"
+        class="form-control"
+        id="id"
+        name="id"
+        required
+        [ngModel] />
+      <br/>
+      <div class="form-group align-content-end">
+        <button type="button" class="btn btn-info" [disabled]="!BillForm.valid" (click)="queryBill(+billId.value)" routerLink="/bills/query-result">Query</button>
+        <button type="button" class="btn btn-warning" (click)="stateService.dropState()" routerLink="/bills/show">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+
+<!--  <div class="row" *ngIf="formSubmitted">
+    <div class="col-xl-12">
+      <h3>Your bill</h3>
+      <p>Id: {{bill.id}}</p>
+      <p>docDate: {{bill.docDate}}</p>
+    </div>
+  </div>-->
+</form>
+

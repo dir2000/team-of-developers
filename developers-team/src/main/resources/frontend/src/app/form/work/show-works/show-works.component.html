@@ -1,0 +1,37 @@
+<form>
+  <div class="container-fluid m-2">
+
+    <div class="row">
+      <div class="col-xl-1 border" *ngIf="works.length != 0">
+        Id:
+      </div>
+      <div class="col-xl-2 border" *ngIf="works.length != 0">
+        Name:
+      </div>
+      <div class="col-xl-2 border" *ngIf="works.length != 0">
+        Price:
+      </div>
+      <div class="btn-group btn-group-sm col-xl-3">
+        <button type="button" class="btn btn-outline-success" (click)="createWork()" routerLink="/works/create">Create</button>
+        <button *ngIf="works.length != 0" type="button" class="btn btn-outline-info" routerLink="/works/query">Query</button>
+      </div>
+    </div>
+    <br/>
+    <div class="row" *ngFor="let work of works">
+      <div class="col-xl-1 border">
+        {{work.id}}
+      </div>
+      <div class="col-xl-2 border">
+        {{work.name}}
+      </div>
+      <div class="col-xl-2 border">
+        {{work.price}}
+      </div>
+      <div class="btn-group btn-group-sm col-xl-3">
+        <button type="button" class="btn btn-outline-warning" (click)="updateWork(work.id)" routerLink="/works/update">Update</button>
+        <button type="button" class="btn btn-outline-warning" (click)="patchAddress(work.id)" routerLink="/works/update">Patch Price</button>
+        <button type="button" class="btn btn-outline-danger" (click)="deleteWork(work.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</form>

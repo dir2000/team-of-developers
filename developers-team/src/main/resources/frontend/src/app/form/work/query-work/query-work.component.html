@@ -1,0 +1,19 @@
+<form #Form="ngForm">
+  <div class="form-group m-2">
+    <div *ngIf="!formSubmitted">
+      <label for="id">Id:</label>
+      <input #workId
+             type="text"
+             class="form-control"
+             id="id"
+             name="id"
+             required
+             [ngModel] />
+      <br/>
+      <div class="form-group align-content-end">
+        <button type="button" class="btn btn-info" [disabled]="!Form.valid" (click)="queryWork(+workId.value)" routerLink="/works/query-result">Query</button>
+        <button type="button" class="btn btn-warning" (click)="stateService.dropState()" routerLink="/works/show">Cancel</button>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,43 @@
+<form>
+  <div class="container-fluid m-2">
+
+    <div class="row">
+      <div class="col-xl-1 border" *ngIf="managers.length != 0">
+        Id:
+      </div>
+      <div class="col-xl-2 border" *ngIf="managers.length != 0">
+        Name:
+      </div>
+      <div class="col-xl-3 border" *ngIf="managers.length != 0">
+        Email:
+      </div>
+      <div class="col-xl-2 border" *ngIf="managers.length != 0">
+        Phone:
+      </div>
+      <div class="btn-group btn-group-sm col-xl-3">
+        <button type="button" class="btn btn-outline-success" (click)="createManager()" routerLink="/managers/create">Create</button>
+        <button *ngIf="managers.length != 0" type="button" class="btn btn-outline-info" routerLink="/managers/query">Query</button>
+      </div>
+    </div>
+    <br/>
+    <div class="row" *ngFor="let manager of managers">
+      <div class="col-xl-1 border">
+        {{manager.id}}
+      </div>
+      <div class="col-xl-2 border">
+        {{manager.name}}
+      </div>
+      <div class="col-xl-3 border">
+        {{manager.email}}
+      </div>
+      <div class="col-xl-2 border">
+        {{manager.phone}}
+      </div>
+      <div class="btn-group btn-group-sm col-xl-3">
+        <button type="button" class="btn btn-outline-warning" (click)="updateManager(manager.id)" routerLink="/managers/update">Update</button>
+        <button type="button" class="btn btn-outline-warning" (click)="patchAddress(manager.id)" routerLink="/managers/update">Patch Email</button>
+        <button type="button" class="btn btn-outline-danger" (click)="deleteManager(manager.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</form>

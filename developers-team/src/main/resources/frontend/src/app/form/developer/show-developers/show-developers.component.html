@@ -1,0 +1,30 @@
+<form>
+  <div class="container-fluid m-2">
+
+    <div class="row">
+        <div class="col-xl-1 border" *ngIf="developers.length != 0">
+          Id:
+        </div>
+        <div class="col-xl-2 border" *ngIf="developers.length != 0">
+          Name:
+        </div>
+      <div class="btn-group btn-group-sm col-xl-3">
+        <button type="button" class="btn btn-outline-success" (click)="createDeveloper()" routerLink="/developers/create">Create</button>
+        <button *ngIf="developers.length != 0" type="button" class="btn btn-outline-info" routerLink="/developers/query">Query</button>
+      </div>
+    </div>
+    <br/>
+    <div class="row" *ngFor="let developer of developers">
+      <div class="col-xl-1 border">
+        {{developer.id}}
+      </div>
+      <div class="col-xl-2 border">
+        {{developer.name}}
+      </div>
+      <div class="btn-group btn-group-sm col-xl-3">
+        <button type="button" class="btn btn-outline-warning" (click)="updateDeveloper(developer.id)" routerLink="/developers/update">Update</button>
+        <button type="button" class="btn btn-outline-danger" (click)="deleteDeveloper(developer.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</form>

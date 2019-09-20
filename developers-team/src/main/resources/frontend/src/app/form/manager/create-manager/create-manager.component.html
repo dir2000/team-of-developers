@@ -1,0 +1,51 @@
+<form #ManagerForm="ngForm">
+  <div class="form-group m-2">
+    <div *ngIf="!stateService.isState(stateService.getStates().CREATE)">
+      <label for="id">Id:</label>
+      <input disabled
+             type="text"
+             class="form-control"
+             id="id"
+             name="id"
+             [(ngModel)]="managerService.manager.id" />
+    </div>
+    <label for="name">Name:</label>
+    <input
+      [disabled]="stateService.isState(stateService.getStates().PATCH)"
+      type="text"
+      class="form-control"
+      id="name"
+      name="name"
+      ngModel
+      required
+      #name="ngModel"
+      [(ngModel)]="managerService.manager.name" />
+    <span *ngIf="!name.valid && name.touched">Please, enter your name</span>
+  </div>
+  <div class="form-group m-2">
+    <label for="email">Email:</label>
+    <input type="text"
+           class="form-control"
+           id="email"
+           name="email"
+           [(ngModel)]="managerService.manager.email" />
+  </div>
+  <div class="form-group m-2">
+    <label for="phone">Phone:</label>
+    <input
+      [disabled]="stateService.isState(stateService.getStates().PATCH)"
+      type="text"
+      class="form-control"
+      id="phone"
+      name="phone"
+      [(ngModel)]="managerService.manager.phone" />
+  </div>
+
+
+  <div class="form-group align-content-end m-2">
+    <button *ngIf="stateService.isState(stateService.getStates().CREATE)" type="button" class="btn btn-info" [disabled]="!ManagerForm.valid" (click)="createManager(ManagerForm)" routerLink="/managers/show">Create</button>
+    <button *ngIf="stateService.isState(stateService.getStates().UPDATE)" type="button" class="btn btn-info" [disabled]="!ManagerForm.valid" (click)="updateManager(ManagerForm)" routerLink="/managers/show">Update</button>
+    <button *ngIf="stateService.isState(stateService.getStates().PATCH)" type="button" class="btn btn-info" [disabled]="!ManagerForm.valid" (click)="patchManager(ManagerForm)" routerLink="/managers/show">Patch</button>
+    <button type="button" class="btn btn-warning" (click)="stateService.dropState()" routerLink="/managers/show">Cancel</button>
+  </div>
+</form>

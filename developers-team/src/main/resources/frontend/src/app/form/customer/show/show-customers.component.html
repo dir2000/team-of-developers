@@ -1,0 +1,43 @@
+<form>
+  <div class="container-fluid m-2">
+
+    <div class="row">
+      <div class="col-xl-1 border" *ngIf="customers.length != 0">
+        Id:
+      </div>
+      <div class="col-xl-2 border" *ngIf="customers.length != 0">
+        Name:
+      </div>
+      <div class="col-xl-2 border" *ngIf="customers.length != 0">
+        Address:
+      </div>
+      <div class="col-xl-2 border" *ngIf="customers.length != 0">
+        Phone:
+      </div>
+      <div class="btn-group btn-group-sm col-xl-3">
+        <button type="button" class="btn btn-outline-success" (click)="createCustomer()" routerLink="/customers/create">Create</button>
+        <button *ngIf="customers.length != 0" type="button" class="btn btn-outline-info" routerLink="/customers/query">Query</button>
+      </div>
+    </div>
+    <br/>
+    <div class="row" *ngFor="let customer of customers">
+      <div class="col-xl-1 border">
+        {{customer.id}}
+      </div>
+      <div class="col-xl-2 border">
+        {{customer.name}}
+      </div>
+      <div class="col-xl-2 border">
+        {{customer.address}}
+      </div>
+      <div class="col-xl-2 border">
+        {{customer.phone}}
+      </div>
+      <div class="btn-group btn-group-sm col-xl-3">
+        <button type="button" class="btn btn-outline-warning" (click)="updateCustomer(customer.id)" routerLink="/customers/update">Update</button>
+        <button type="button" class="btn btn-outline-warning" (click)="patchAddress(customer.id)" routerLink="/customers/update">Patch Address</button>
+        <button type="button" class="btn btn-outline-danger" (click)="deleteCustomer(customer.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</form>

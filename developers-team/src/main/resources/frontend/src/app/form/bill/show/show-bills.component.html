@@ -1,0 +1,39 @@
+<form>
+  <div class="container-fluid m-2">
+
+    <div class="row">
+      <div class="col-xl-1 border" *ngIf="bills.length != 0">
+        Id:
+      </div>
+      <div class="col-xl-2 border" *ngIf="bills.length != 0">
+        Date:
+      </div>
+      <div class="btn-group btn-group-sm col-xl-3">
+        <button type="button" class="btn btn-outline-success" (click)="stateService.setState(stateService.getStates().CREATE)" routerLink="/bills/create">Create</button>
+        <button *ngIf="bills.length != 0" type="button" class="btn btn-outline-info" (click)="stateService.setState(stateService.getStates().CREATE)" routerLink="/bills/query">Query</button>
+      </div>
+    </div>
+    <br/>
+    <div class="row" *ngFor="let bill of bills">
+      <div class="col-xl-1 border">
+        {{bill.id}}
+      </div>
+      <div class="col-xl-2 border">
+        {{bill.docDate | date}}
+      </div>
+      <div class="btn-group btn-group-sm col-xl-3">
+        <button type="button" class="btn btn-outline-warning" (click)="updateBill(bill.id)" routerLink="/bills/update">Update</button>
+        <button type="button" class="btn btn-outline-danger" (click)="deleteBill(bill.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</form>
+<!--<div>
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+</div> -->

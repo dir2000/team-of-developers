@@ -1,0 +1,37 @@
+<form>
+  <div class="container-fluid m-2">
+
+    <div class="row">
+      <div class="col-xl-1 border" *ngIf="qualifications.length != 0">
+        Id:
+      </div>
+      <div class="col-xl-2 border" *ngIf="qualifications.length != 0">
+        Name:
+      </div>
+      <div class="col-xl-2 border" *ngIf="qualifications.length != 0">
+        Responsibility:
+      </div>
+      <div class="btn-group btn-group-sm col-xl-3">
+        <button type="button" class="btn btn-outline-success" (click)="createQualification()" routerLink="/qualifications/create">Create</button>
+        <button *ngIf="qualifications.length != 0" type="button" class="btn btn-outline-info" routerLink="/qualifications/query">Query</button>
+      </div>
+    </div>
+    <br/>
+    <div class="row" *ngFor="let qualification of qualifications">
+      <div class="col-xl-1 border">
+        {{qualification.id}}
+      </div>
+      <div class="col-xl-2 border">
+        {{qualification.name}}
+      </div>
+      <div class="col-xl-2 border">
+        {{qualification.responsibility}}
+      </div>
+      <div class="btn-group btn-group-sm col-xl-3">
+        <button type="button" class="btn btn-outline-warning" (click)="updateQualification(qualification.id)" routerLink="/qualifications/update">Update</button>
+        <button type="button" class="btn btn-outline-warning" (click)="patchAddress(qualification.id)" routerLink="/qualifications/update">Patch Responsibility</button>
+        <button type="button" class="btn btn-outline-danger" (click)="deleteQualification(qualification.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</form>
