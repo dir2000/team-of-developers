@@ -25,7 +25,7 @@
         <slf4jApiVersion>1.7.25</slf4jApiVersion>
         <lombockVersion>1.18.4</lombockVersion>
         <springVersion>5.0.8.RELEASE</springVersion>
-        <jacksonVersion>2.9.8</jacksonVersion>
+        <jacksonVersion>2.10.0.pr3</jacksonVersion>
         <hikariVersion>2.7.4</hikariVersion>
         <hibernateValidatorVersion>6.0.9.Final</hibernateValidatorVersion>
         <glasshfishELVersion>3.0.0</glasshfishELVersion>
