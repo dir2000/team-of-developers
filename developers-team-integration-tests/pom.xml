@@ -10,4 +10,11 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>developers-team-integration-tests</artifactId>
     <packaging>pom</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>hillel.enterprise.course</groupId>
+            <artifactId>developers-team-app</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>
