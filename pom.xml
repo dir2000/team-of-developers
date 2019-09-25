@@ -5,14 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>hillel.enterprise.course</groupId>
-    <artifactId>team-of-developers</artifactId>
+    <artifactId>developers-team</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>developers-team</module>
+        <module>developers-team-app</module>
         <module>developers-team-integration-tests</module>
     </modules>
     <packaging>pom</packaging>
-    <name>Team of developers</name>
+    <name>Developers team</name>
 
     <properties>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
@@ -58,7 +58,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
-                    <argLine>-Xms2024m -illegal-access=permit</argLine>
+                    <argLine>-Xms2024m --illegal-access=permit</argLine>
                     <forkCount>0</forkCount>
                 </configuration>
             </plugin>
