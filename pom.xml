@@ -33,7 +33,7 @@
         <logbackVersion>1.2.3</logbackVersion>
         <slf4jApiVersion>1.7.25</slf4jApiVersion>
         <lombockVersion>1.18.4</lombockVersion>
-        <springVersion>5.0.8.RELEASE</springVersion>
+        <springVersion>5.2.3.RELEASE</springVersion>
         <jacksonVersion>2.10.0.pr3</jacksonVersion>
         <hikariVersion>2.7.4</hikariVersion>
         <hibernateValidatorVersion>6.0.9.Final</hibernateValidatorVersion>
