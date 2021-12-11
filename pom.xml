@@ -29,7 +29,7 @@
 
         <junit5Version>5.5.1</junit5Version>
         <mockitoVersion>2.0.2-beta</mockitoVersion>
-        <log4j2Version>2.10.0</log4j2Version>
+        <log4j2Version>2.15.0</log4j2Version>
         <logbackVersion>1.2.3</logbackVersion>
         <slf4jApiVersion>1.7.25</slf4jApiVersion>
         <lombockVersion>1.18.4</lombockVersion>
