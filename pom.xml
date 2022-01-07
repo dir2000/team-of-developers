@@ -39,7 +39,7 @@
         <hibernateValidatorVersion>6.1.0.Final</hibernateValidatorVersion>
         <glasshfishELVersion>3.0.0</glasshfishELVersion>
         <servletVersion>4.0.1</servletVersion>
-        <h2Version>1.4.194</h2Version>
+        <h2Version>2.0.206</h2Version>
         <jsonPathVersion>2.4.0</jsonPathVersion>
         <pmdVersion>3.12.0</pmdVersion>
     </properties>
