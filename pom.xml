@@ -36,7 +36,7 @@
         <springVersion>5.2.21.RELEASE</springVersion>
         <jacksonVersion>2.12.6.1</jacksonVersion>
         <hikariVersion>2.7.4</hikariVersion>
-        <hibernateValidatorVersion>6.1.0.Final</hibernateValidatorVersion>
+        <hibernateValidatorVersion>6.1.5.Final</hibernateValidatorVersion>
         <glasshfishELVersion>3.0.0</glasshfishELVersion>
         <servletVersion>4.0.1</servletVersion>
         <h2Version>2.1.210</h2Version>
